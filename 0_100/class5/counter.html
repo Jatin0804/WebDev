@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Counter badhega</title>
+</head>
+
+<body>
+    <script>
+        function onButtonPress(){
+            const currValue = document.getElementById("btn").innerHTML;
+            console.log(currValue.split(" "));
+            const currCounter = currValue.split(" ")[1];
+            const newCounter = parseInt(currCounter) + 1;
+            document.getElementById("btn").innerHTML = "Counter " + newCounter;
+        }
+    </script>
+    <button onclick="onButtonPress()" id="btn">Counter 0</button>
+</body>
+</html>

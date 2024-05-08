@@ -1,0 +1,52 @@
+<html>
+    <script>
+        function addTodo(){
+            const title = document.getElementById("title").value;
+            const description = document.getElementById("description").value;
+            const originalHtml = document.getElementById("container").innerHTML;
+            
+            document.getElementById("container").innerHTML = originalHtml + `
+            <div>
+                <div>${title}</div>
+                <div>${description}</div>
+                <button>Mark as Done</button>
+            </div>
+            `
+        }
+
+        function addTodo1(){
+            const title = document.getElementById("title").value;
+            const description = document.getElementById("description").value;
+            const originalHtml = document.getElementById("container").innerHTML;
+            
+            // document.createElement()
+            const childDiv = document.createElement("div");
+            
+            const grandchildDiv1 = document.createElement("div");
+            grandchildDiv1.innerHTML = title;
+            const grandchildDiv2 = document.createElement("div");
+            grandchildDiv2.innerHTML = description;
+            const grandchildDiv3 = document.createElement("div");
+            grandchildDiv3.innerHTML = `<button>Mark as Done.`;
+
+            childDiv.appendChild(grandchildDiv1);
+            childDiv.appendChild(grandchildDiv2);
+            childDiv.appendChild(grandchildDiv3);
+
+            document.getElementById("container").appendChild(childDiv)
+        }
+    </script>
+
+
+    <div>
+        <input id="title" type="text" placeholder="title">
+        <br><br>
+        <input id="description" type="text" placeholder="description">
+        <br><br>
+        <button onclick="addTodo()">Add Todo Normally</button>
+        <br><br>
+        <button onclick="addTodo1()">Add Todo using createElement</button>
+        <br><br>
+        <div id="container"></div>
+    </div>
+</html>

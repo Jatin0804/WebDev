@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    div{
+        border: 2px solid blue;
+        margin-bottom: 10px;
+    }
+</style>
+<body>
+    <h2>JS HTML DOM</h2>
+    <p>Finding HTML elements by Query Selector ALL () Method.</p>
+
+    <p>
+        Change the backgroundColor of every p element where the parent is a div element.
+    </p>
+
+    <div>
+        <h3> H3 Element.</h3>
+        <p> I am a p element, my parent is div.</p>
+    </div>
+
+    <div>
+        <h2> H2 Element.</h3>
+        <p> I am also p element, my parent is also div.</p>
+    </div>
+
+    <script>
+        const nodeList = document.querySelectorAll("div > p");
+        for(let i = 0; i < nodeList.length ; i++){
+            nodeList[i].style.backgroundColor = "green";
+        }
+    </script>
+</body>
+</html>

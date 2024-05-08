@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JS HTML DOM</h2>
+    <p>Finding HTML elements by Query Selector.</p>
+
+    <div> Div one</div>
+    <p class="intro">Paragraph One</p>
+    <div> DIv Two</div>
+    <p class="subheading"> Paragraph 2</p>
+    <div> Yet anotehr div</div>
+    <div id="myDIV" style="border: 1px solid black; padding: 8px;">
+        <h2 class="example"> A heading. </h2>
+        <p class="example"> A paragraph </p>
+        <p class="example"> A paragraph </p>
+    </div>
+    <p id="demo"></p>
+
+    <script>
+        var paragraph = document.querySelectorAll( 'p.intro' );
+        // var paragraph = document.querySelectorAll( 'p' );
+        paragraph.forEach(paragraph => paragraph.style.backgroundColor = "red");
+
+        const matches = document.querySelectorAll("p.intro, p.subheading");
+        const elements = document.getElementById("myDIV");
+        const list = elements.querySelectorAll(".example");
+        document.getElementById("demo").innerHTML = list.length;
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+</head>
+<body>
+    <script>
+        function populateDiv(){
+            const a = document.getElementById("num1").value;
+            const b = document.getElementById("num2").value;
+            // const final = document.getElementById("finalSum");
+            // final.innerHTML = parseInt(a) + parseInt(b);
+
+            fetch("https://sum-server.100xdevs.com/sum?a=" + a + "&b=" + b)
+            .then(function(response){
+                console.log(response);
+
+                response.text()
+                .then(function(ans){
+                    
+                    document.getElementById("finalSum").innerHTML = ans;
+                })
+            });
+        }
+
+        async function populateDiv2() {
+            const a = document.getElementById("num1").value;
+            const b = document.getElementById("num2").value;
+
+            // axios
+            // const response = await axios.get("https://sum-server.100xdevs.com/sum?a=" + a + "&b=" + b)
+            // response.data
+            
+            const response = await fetch("https://sum-server.100xdevs.com/sum?a=" + a + "&b=" + b)
+            const ans = await response.text();
+            document.getElementById("finalSum").innerHTML = ans;
+        }
+    </script>
+
+    <input id="num1" type="text" placeholder="First Number"></input> <br> <br>
+    <input id="num2" type="text" placeholder="Second Number"></input> <br> <br>
+    <button onclick="populateDiv2()">
+        Calculate Sum
+    </button> <br><br>
+    <div id="finalSum"></div>
+</body>
+</html>
