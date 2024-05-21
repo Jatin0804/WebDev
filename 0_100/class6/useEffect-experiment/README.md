@@ -1,8 +1,14 @@
-# React + Vite
+# useEffect
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## App.jsx
+- Here useEffect concepts are tried and experimented with.
+- dependency arrays are learned.
+- useEffect is used with setInterval and fetch functions.
+- using axios
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## App_todo.jsx
+- get a todo by its id
+- use useEffect in other function
+- dependency array working
+- 

@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react'
+import axios from "axios";
 
 /*
 function App() {
@@ -21,6 +22,7 @@ function App() {
 function App() {
     const [todos, setTodos] = useState([])
 
+    /*
     useEffect(() => {
         setInterval(() => {
             fetch("https://sum-server.100xdevs.com/todos")
@@ -30,6 +32,14 @@ function App() {
                 })
         }, 10000)
     }, []);
+     */
+
+    useEffect(() => {
+        axios.get("https://sum-server.100xdevs.com/todos")
+            .then(function(response) {
+                setTodos(response.data.todos);
+            })
+    }, [])
 
     return (
         <div>
